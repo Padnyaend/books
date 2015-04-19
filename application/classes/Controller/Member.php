@@ -3,9 +3,9 @@
  // Описание класса 
 class Controller_Member extends Controller { 
 
-    public function action_index() { 
-		// Тут можно сделать ссылки на вход и регистрацию 
-		echo 'Hello, world!'; 
+    public function action_index() { 				 		
+    	
+ 		
     } 
 
 	// Регистрация пользователей 

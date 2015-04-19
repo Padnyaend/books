@@ -103,7 +103,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/kohana/',
+	'base_url'    => '/Books/'
 ));
 
 /**
@@ -115,6 +115,8 @@ Kohana::$log->attach(new Log_File(APPPATH.'logs'));
  * Attach a file reader to config. Multiple readers are supported.
  */
 Kohana::$config->attach(new Config_File);
+
+Cookie::$salt = '12345678';
 
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
@@ -138,7 +140,7 @@ Kohana::modules(array(
  * If you have not defined a cookie salt in your Cookie class then
  * uncomment the line below and define a preferrably long salt.
  */
-// Cookie::$salt = NULL;
+
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
@@ -146,6 +148,6 @@ Kohana::modules(array(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'welcome',
+		'controller' => 'Welcome',
 		'action'     => 'index',
 	));
