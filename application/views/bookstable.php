@@ -21,55 +21,51 @@
 	'resources/primeui-1.1/js/growl/growl.js"></script>
 	';
 
+	echo '	
+	<script type="text/javascript">';
+    echo "
+    	 $(function() {
+                $('#tbllocal').puidatatable({
+                    caption: 'Books',
+                    paginator: {
+                        rows: 50
+                    },
+                    columns: [
+                        {field:'book', headerText: 'Book', sortable:true},
+                        {field:'author', headerText: 'Author', sortable:true}
+                    ],
+                    datasource: ";
 
-	echo "	
-	<script type='text/javascript'>
-    	$(function() {  
-	        $('#tbllocal').puidatatable({ 
-            caption: 'Local Datasource',  
-            paginator: {  
-                rows: 5  
-            },  
-            datasource: [  
-                {'brand':'Volkswagen','year': 2012, 'color':'White', 'vin':'dsad231ff'},  
-                {'brand':'Audi','year': 2011, 'color':'Black', 'vin':'gwregre345'},  
-                {'brand':'Renault','year': 2005, 'color':'Gray', 'vin':'h354htr'},  
-                {'brand':'Bmw','year': 2003, 'color':'Blue', 'vin':'j6w54qgh'},  
-                {'brand':'Mercedes','year': 1995, 'color':'White', 'vin':'hrtwy34'},  
-                {'brand':'Opel','year': 2005, 'color':'Black', 'vin':'jejtyj'},  
-                {'brand':'Honda','year': 2012, 'color':'Yellow', 'vin':'g43gr'},  
-                {'brand':'Chevrolet','year': 2013, 'color':'White', 'vin':'greg34'},  
-                {'brand':'Opel','year': 2000, 'color':'Black', 'vin':'h54hw5'},  
-                {'brand':'Mazda','year': 2013, 'color':'Red', 'vin':'245t2s'}  
-            ],  
-            selectionMode: 'single',  
-            rowSelect: function(event, data) {  
-                $('#messages').puigrowl('show', [{severity:'info', summary: 'Row Selected', detail: (data.brand + ' ' + data.vin)}]);  
-            },  
-            rowUnselect: function(event, data) {  
-                $('#messages').puigrowl('show', [{severity:'info', summary: 'Row Unselected', detail: (data.brand + ' ' + data.vin)}]);  
-            }  
-        	});   
-    	});  
+     echo json_encode($books);
+
+	 echo ",
+                    selectionMode: 'single',
+                    rowSelect: function(event, data) {
+                        $('#messages').puigrowl('show', [{severity:'info', summary: 'Row Selected', detail: (data.brand + ' ' + data.vin)}]);
+                    },
+                    rowUnselect: function(event, data) {
+                        $('#messages').puigrowl('show', [{severity:'info', summary: 'Row Unselected', detail: (data.brand + ' ' + data.vin)}]);
+                    }
+                });                                
+                
+                $('#messages').puigrowl();
+                
+            });  
         
-        $('#messages').puigrowl();
+ 
 
 	</script>";
 
 	echo '<style type="text/css"> .pui-datatable {margin-bottom: 40px;} </style>';
 	
 	echo '
-	</head>
-	<body>
        <div id="main">
           <div class="content-section">
              <div class="content-block">					
                 <div id="content-demo">
-					<div id="messages"></div>
                     <div id="tbllocal"></div> 
                 </div>
-                <div style="clear: both" />
-           </div>
+           	 </div>
           </div>
        </div>
-	</body>';
+	';

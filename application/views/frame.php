@@ -4,6 +4,7 @@
 		<!DOCTYPE html>
 	    <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	    <title>Books</title>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta http-equiv="pragma" content="no-cache" />
@@ -45,8 +46,12 @@
 	echo '<script src="http://'.$_SERVER['SERVER_NAME'].URL::base().
 	'resources/jquery-ui.js"></script>
 	';
+    echo '</head><body>
+
+	';
 	
 	echo View::factory('bookstable')->set('books', $books);
 			
-echo '</html>';
+    echo '
+	</body></html>';
 
