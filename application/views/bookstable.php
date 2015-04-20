@@ -21,6 +21,7 @@
 	'resources/primeui-1.1/js/growl/growl.js"></script>
 	';
 
+
 	echo '	
 	<script type="text/javascript">';
     echo "
@@ -59,7 +60,6 @@
 	echo '<style type="text/css"> .pui-datatable {margin-bottom: 40px;} </style>';
 	
 	echo '
-       <div id="main">
           <div class="content-section">
              <div class="content-block">					
                 <div id="content-demo">
@@ -67,5 +67,4 @@
                 </div>
            	 </div>
           </div>
-       </div>
 	';

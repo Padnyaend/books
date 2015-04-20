@@ -46,12 +46,14 @@
 	echo '<script src="http://'.$_SERVER['SERVER_NAME'].URL::base().
 	'resources/jquery-ui.js"></script>
 	';
-    echo '</head><body>
+	
+
+    echo '</head><body><div id="main">
 
 	';
-	
+	echo View::factory('auth');
 	echo View::factory('bookstable')->set('books', $books);
 			
     echo '
-	</body></html>';
+	</div></body></html>';
 
